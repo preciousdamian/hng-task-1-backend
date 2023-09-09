@@ -16,7 +16,7 @@ async def root(
     utc_time = datetime.utcnow().replace(tzinfo=pytz.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
     # GitHub URL for the file being run
-    github_file_url = "https://github.com/username/repo/blob/main/file_name.ext"
+    github_file_url = "https://github.com/preciousdamian/hng-task-1-frontend/blob/master/main.py"
 
     # GitHub URL for the full source code repository
     github_repo_url = "https://github.com/preciousdamian/hng-task-1-frontend.git"
