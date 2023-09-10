@@ -4,5 +4,3 @@ pipenv==2023.9.1
 pydantic==2.2.1
 pytz==2023.3.post1
 requests==2.31.0
-uvicorn==0.23.2
-virtualenv==20.24.4
