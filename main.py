@@ -5,10 +5,7 @@ from fastapi import FastAPI, Query, HTTPException
 app = FastAPI()
 
 @app.get("/api")
-async def root(
-    slack_name: str = Query("Precious Damian", description="Slack Name"),
-    track: str = Query("Backend", description="Track"),
-):
+async def root(slack_name: str = Query("Precious Damian", description="Slack Name"), track: str = Query("Backend", description="Track")):
     # Getting current day of the week
     current_day = datetime.now(pytz.timezone('Europe/Paris')).strftime('%A')
 
@@ -23,9 +20,9 @@ async def root(
     
     Response = {
         "slack_name": slack_name,
+        "track": track,
         "current_day": current_day,
         "utc_time": utc_time,
-        "track": track,
         "github_file_url": github_file_url,
         "github_repo_url": github_repo_url,
         "status_code": 200
