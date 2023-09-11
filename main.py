@@ -1,8 +1,11 @@
 import pytz
 from datetime import datetime
 from fastapi import FastAPI, Query
+import os
 
 app = FastAPI()
+
+port = int(os.getenv("PORT", 8000))
 
 @app.get("/api")
 async def root(slack_name: str = Query(default="", description="Slack Name"), track: str = Query(default="", description="Track")):
@@ -33,4 +36,4 @@ async def root(slack_name: str = Query(default="", description="Slack Name"), tr
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=port)
