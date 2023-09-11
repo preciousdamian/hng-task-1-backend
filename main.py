@@ -1,11 +1,11 @@
 import pytz
 from datetime import datetime
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query
 
 app = FastAPI()
 
 @app.get("/api")
-async def root(slack_name: str = Query("Precious Damian", description="Slack Name"), track: str = Query("Backend", description="Track")):
+async def root(slack_name: str = Query(default="", description="Slack Name"), track: str = Query(default="", description="Track")):
     # Getting current day of the week
     current_day = datetime.now(pytz.timezone('Europe/Paris')).strftime('%A')
 
